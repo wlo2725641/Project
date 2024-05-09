@@ -1,85 +1,102 @@
 <!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html lang="en">
+
+<head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <!-- 引入套件 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!--swiper-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!--bootstrap-->
-    <title>九大宵夜</title>
 
-
-    <style type="text/css">
-      .panel {
-        height: 100%;
-        width: 100%;
-      }
-      .panel.green {
-        margin-bottom: 400px
-      }
-    </style>
-  </head>
-  <body>
-
-    <section class="panel blue">
-      <b>ONE</b>
-    </section>
-    <section class="panel turqoise">
-      <b>TWO</b>
-    </section>
-    <section class="panel green">
-      <b>THREE</b>
-    </section>
-    <section class="panel bordeaux">
-      <b>FOUR</b>
-    </section>
-    
-    
-    
-    
-    <!--套件-->
-    <script src="lib/bootstrap5.3.3/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-      $(function () { // wait for document ready
-        // init
-        var controller = new ScrollMagic.Controller({
-          globalSceneOptions: {
-            triggerHook: 'onLeave',
-            duration: "200%" // this works just fine with duration 0 as well
-            // However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
-            // Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
-          }
-        });
-    
-        // get all slides
-        var slides = document.querySelectorAll("section.panel");
-    
-        // create scene for every slide
-        for (var i=0; i<slides.length; i++) {
-          new ScrollMagic.Scene({
-              triggerElement: slides[i]
-            })
-            .setPin(slides[i], {pushFollowers: false})
-            .addIndicators() // add indicators (requires plugin)
-            .addTo(controller);
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
         }
-      });
-    </script>
 
-    <!--bootstrap-->
-  </body>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-v {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+
+    <div class="swiper mySwiper swiper-h">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Horizontal Slide 1</div>
+            <div class="swiper-slide">
+                <div class="swiper mySwiper2 swiper-v">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Vertical Slide 1</div>
+                        <div class="swiper-slide">Vertical Slide 2</div>
+                        <div class="swiper-slide">Vertical Slide 3</div>
+                        <div class="swiper-slide">Vertical Slide 4</div>
+                        <div class="swiper-slide">Vertical Slide 5</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">Horizontal Slide 3</div>
+            <div class="swiper-slide">Horizontal Slide 4</div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 50,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            direction: "vertical",
+            spaceBetween: 50,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
 </html>

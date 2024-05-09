@@ -1,8 +1,13 @@
 var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 50,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+var swiper2 = new Swiper(".mySwiper2", {
   direction: "vertical",
-  slidesPerView: 1,
-  spaceBetween: 30,
-  mousewheel: true,
+  spaceBetween: 50,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
