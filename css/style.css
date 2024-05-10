@@ -4,11 +4,11 @@
 }
 
 html,body{
-background-color: rgb(219, 217, 217);
+background-color: #F9DEC9;
 }
 
 .drewCard{
-    background-color: rgb(107, 109, 109);
+    background-color: #b69d7e;
     border:#ffffff 5px inset;
     padding: 15px;
 }

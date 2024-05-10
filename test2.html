@@ -3,99 +3,131 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Swiper demo</title>
+    <title>測試</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- Demo styles -->
     <style>
-        html,
-        body {
-            position: relative;
-            height: 100%;
-        }
-
-        body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .swiper {
-            width: 100%;
-            height: 100%;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #333;
+
         }
 
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .swiper-slide img {
-            display: block;
+        .container .spinBtn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 0.1rem;
+            border:  4px solid rgba(0,0,0,0.75);
+            cursor: pointer;
+            user-select: none; 
+        }
+        .container .spinBtn::before {
+            content: '';
+            position: absolute;
+            top: -28px;
+            width: 20px;
+            height: 30px;
+            background: #fff;
+            clip-path: polygon(50% 0%,15% 100%,85% 100%);
+        }
+        .container .wheel{
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: #333;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 05px #333,
+            0 0 0 15px #fff,
+            0 0 0 18px #111;
+            transition: transform 5s ease-in-out;
+        }
+        .container .wheel .number{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background: var(--clr);
+            transform-origin: bottom right;
+            transform:rotate(calc(60deg*var(--i)));/*幾片修改處*/
+            clip-path: polygon(0% 0%,74% 0%,100% 100%,0% 74%);/*68~74都不錯*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none; 
+            cursor: pointer;
+        }
+        .container .wheel .number span{
+            position: relative;
+            transform: rotate(60deg);
+            font-size: 2em;
+            font-weight: 700;
+            color: #111;
+            text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+        }
+        .container .wheel .number span::after{
+            content: '';
+            position: absolute;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
-        .swiper-v {
-            background: #eee;
-        }
     </style>
 </head>
 
 <body>
-    <!-- Swiper -->
-
-    <div class="swiper mySwiper swiper-h">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Horizontal Slide 1</div>
-            <div class="swiper-slide">
-                <div class="swiper mySwiper2 swiper-v">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">Vertical Slide 1</div>
-                        <div class="swiper-slide">Vertical Slide 2</div>
-                        <div class="swiper-slide">Vertical Slide 3</div>
-                        <div class="swiper-slide">Vertical Slide 4</div>
-                        <div class="swiper-slide">Vertical Slide 5</div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <div class="swiper-slide">Horizontal Slide 3</div>
-            <div class="swiper-slide">Horizontal Slide 4</div>
+    <div class="container">
+        <div class="spinBtn">spin</div>
+        <div class="wheel">
+            <div class="number" style="--i:1;--clr:#db7093"><span>鹹酥雞</span></div>
+            <div class="number" style="--i:2;--clr:#E6E18F"><span>永和</span></div>
+            <div class="number" style="--i:3;--clr:#FFFAE2"><span>滷味</span></div>
+            <div class="number" style="--i:4;--clr:#8CFFDA"><span>魯肉飯</span></div>
+            <div class="number" style="--i:5;--clr:#75485E"><span>泡麵</span></div>
+            <div class="number" style="--i:6;--clr:#EF767A"><span>燒烤</span></div>
+            <!-- <div class="number" style="--i:7;--clr:#456990"><span>2</span></div>
+            <div class="number" style="--i:8;--clr:#EEB868"><span>1000</span></div> -->
         </div>
-        <div class="swiper-pagination"></div>
     </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 50,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-        var swiper2 = new Swiper(".mySwiper2", {
-            direction: "vertical",
-            spaceBetween: 50,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
+        let wheel=document.querySelector(".wheel");
+        let spinBtn=document.querySelector(".spinBtn");
+        let value=Math.ceil(Math.random()*3600);
+
+        spinBtn.onclick=function(){
+            wheel.style.transform="rotate("+value+"deg)";
+            value+=Math.ceil(Math.random()*3600);
+
+        }
     </script>
 </body>
 

@@ -2,17 +2,18 @@
 .swiper {
   width: 100%;
   max-width: 480px;
-  height: auto; 
+  height: 640px; 
 }
 
 @media (max-width: 480px) {
   .swiper {
-    max-width: 100%; /* 小屏幕時寬度佔滿 */
+    max-width: 100%; 
+    height: auto; 
   }
   .card {
-    width: 100%; /* 卡片寬度佔滿 */
+    width: 100%; 
   }
-}
+} 
 
 .swiper-slide {
   display: flex;
@@ -62,4 +63,12 @@
 
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
+} 
+
+.swiper-slide:nth-child(11n) {
+  background-color: #B6C4A2;
+} 
+
+.swiper-slide:nth-child(12n) {
+  background-color: #FFFAE2;
 } 
