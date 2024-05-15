@@ -1,198 +1,425 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!--引入套件-->
+    <link rel="stylesheet" href="lib/bootstrap5.3.3/css/bootstrap.min.css" />
+    <!--bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--swiper-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!--animate.css、wow.js-->
 
-  <!--引入套件-->
-  <link rel="stylesheet" href="lib/bootstrap5.3.3/css/bootstrap.min.css" />
-  <!--bootstrap-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!--swiper-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-  <!--animate.css、wow.js-->
+    <link rel="stylesheet" href="css/swiperPages.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/luckWheel.css" />
+    <title>宵夜推薦</title>
+  </head>
+  <!--fixed-top-->
 
-  <link rel="stylesheet" href="css/swiperPages.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/luckWheel.css">
-   <title>宵夜推薦</title>
-</head>
-<!--fixed-top-->
-
-<body>
-  <!-- <nav id="navbar-example2" class="navbar navbar-light px-3 fixed-top shadow-lg" style="background-color: #685044;">
-    <a class="navbar-brand text-light" href="#"><b>宵夜網</b></a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link text-light" href="#showCarousel">幻燈片</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="#drewCard">抽卡</a>
-      </li>
-    </ul>
-  </nav> -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-lg" style="background-color: #685044;">
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top shadow-lg"
+      style="background-color: #685044"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#"><b>宵夜網</b></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link text-light active" href="#">幻燈片</a>
+            <a class="nav-link text-light" href="#drewCard">抽卡</a>
+            <a class="nav-link text-light" href="#luckyDrew">轉盤</a>
+            <a class="nav-link text-light" href="#myForm">意見回饋</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main-->
+    <!--幻燈片-->
     <div class="container-fluid">
-      <a class="navbar-brand text-light" href="#"><b>宵夜網</b></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link text-light active" href="#">幻燈片</a>
-          <a class="nav-link text-light" href="#">抽卡</a>
+      <div class="showCarousel mb-5">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/images/homepage/modify/1.png"
+                class="d-block w-100"
+                alt="炸機"
+                style="max-height: 100vh"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/images/homepage/modify/2.png"
+                class="d-block w-100"
+                alt="拉麵"
+                style="max-height: 100vh"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/images/homepage/modify/3.png"
+                class="d-block w-100"
+                alt="火鍋"
+                style="max-height: 100vh"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-    </div>
-  </nav>
-  <!--main-->
-  <!--幻燈片-->
-  <div class="container-fluid">
-    <div class="showCarousel mb-5">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner ">
-          <div class="carousel-item active">
-            <img src="/images/homepage/modify/1.png" class="d-block w-100" alt="炸機" style="max-height: 100vh;">
-          </div>
-          <div class="carousel-item">
-            <img src="/images/homepage/modify/2.png" class="d-block w-100" alt="拉麵" style="max-height: 100vh;">
-          </div>
-          <div class="carousel-item">
-            <img src="/images/homepage/modify/3.png" class="d-block w-100" alt="火鍋" style="max-height: 100vh;">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-    <div class="drewCard container-fluid wow fadeIn " data-wow-duration="3s">
-      <div class="swiper mySwiper wow bounceInLeft" data-wow-duration="3s" data-wow-delay="3s">
-        <div class="swiper-wrapper wow shake" data-wow-delay="6s" data-wow-duration="1s">
-          <div class="swiper-slide fs-2" style="height: 100%;">不知道宵夜要吃什麼是嗎?</div>
-          <div class="swiper-slide fs-1">來點重口味的?</div>
-          <div class="swiper-slide">
-            <!--卡片鹹酥雞-->
-            <div class="card" style="width: 18rem;">
-              <img src="/images/九大宵夜/modify/1.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-text"><B>鹹酥雞</B></h2>
-                <p class="card-text">稱他為宵夜之王我猜應該沒有人會反對吧!雞排、薯條、鹹酥雞滿足你飢餓的一切這裡都有!</p>
+      <div
+        class="drewCard container-fluid wow fadeIn"
+        data-wow-duration="1.5s"
+        id="drewCard"
+      >
+        <div
+          class="swiper mySwiper wow bounceInLeft"
+          data-wow-duration="3s"
+          data-wow-delay="1.5s"
+        >
+          <div
+            class="swiper-wrapper wow shake"
+            data-wow-delay="6s"
+            data-wow-duration="1s"
+          >
+            <div class="swiper-slide fs-2" style="height: 100%">
+              不知道宵夜要吃什麼是嗎?
+            </div>
+            <div class="swiper-slide fs-1">來點重口味的?</div>
+            <div class="swiper-slide">
+              <!--卡片鹹酥雞-->
+              <div class="card" style="width: 18rem">
+                <img
+                  src="/images/九大宵夜/modify/1.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h2 class="card-text"><b>鹹酥雞</b></h2>
+                  <p class="card-text">
+                    稱他為宵夜之王我猜應該沒有人會反對吧!雞排、薯條、鹹酥雞滿足你飢餓的一切這裡都有!
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <!--卡片燒烤-->
-            <div class="card" style="width: 18rem;">
-              <img src="/images/九大宵夜/modify/2.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-text"><B>燒烤</B></h2>
-                <p class="card-text">有時候不想吃太多炸物的好選擇。但是價格昂貴，也許買之前你應該要先看肚子和荷包哪一個比較扁!</p>
+            <div class="swiper-slide">
+              <!--卡片燒烤-->
+              <div class="card" style="width: 18rem">
+                <img
+                  src="/images/九大宵夜/modify/2.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h2 class="card-text"><b>燒烤</b></h2>
+                  <p class="card-text">
+                    有時候不想吃太多炸物的好選擇。但是價格昂貴，也許買之前你應該要先看肚子和荷包哪一個比較扁!
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <!--卡片滷味-->
-            <div class="card" style="width: 18rem;">
-              <img src="/images/九大宵夜/modify/3.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-text"><B>滷味</B></h2>
-                <p class="card-text">三巨頭的最後一位，有時候不想吃那麼罪惡，滷味是你的最佳好夥伴，但是滷味就是要吃熱的、冷盤是邪教!</p>
+            <div class="swiper-slide">
+              <!--卡片滷味-->
+              <div class="card" style="width: 18rem">
+                <img
+                  src="/images/九大宵夜/modify/3.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h2 class="card-text"><b>滷味</b></h2>
+                  <p class="card-text">
+                    三巨頭的最後一位，有時候不想吃那麼罪惡，滷味是你的最佳好夥伴，但是滷味就是要吃熱的、冷盤是邪教!
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide fs-2">什麼?你說這些都吃膩了!</div>
-          <div class="swiper-slide">
-            <!--卡片滷味-->
-            <div class="card" style="width: 18rem;">
-              <img src="/images/九大宵夜/modify/4.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-text"><B>永和豆漿</B></h2>
-                <p class="card-text">選擇障礙的時候來永和就對了，各式中式點心，有甜有鹹，想吃甚麼這邊都找的到!</p>
+            <div class="swiper-slide fs-2">什麼?你說這些都吃膩了!</div>
+            <div class="swiper-slide">
+              <!--卡片永豆-->
+              <div class="card" style="width: 18rem">
+                <img
+                  src="/images/九大宵夜/modify/4.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h2 class="card-text"><b>永和豆漿</b></h2>
+                  <p class="card-text">
+                    選擇障礙的時候來永和就對了，各式中式點心，有甜有鹹，想吃甚麼這邊都找的到!
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <!--卡片滷肉飯-->
-            <div class="card" style="width: 18rem;">
-              <img src="/images/九大宵夜/modify/5.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-text"><B>滷肉飯</B></h2>
-                <p class="card-text">台中人夜店完的最愛，滷肉飯配上一碗鮮魚湯，精力馬上回滿。桃園地區首推文化早點!</p>
+            <div class="swiper-slide">
+              <!--卡片滷肉飯-->
+              <div class="card" style="width: 18rem">
+                <img
+                  src="/images/九大宵夜/modify/5.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h2 class="card-text"><b>滷肉飯</b></h2>
+                  <p class="card-text">
+                    台中人夜店完的最愛，滷肉飯配上一碗鮮魚湯，精力馬上回滿。桃園地區首推文化早點!
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <!--卡片滷肉飯-->
-            <div class="card" style="width: 18rem;">
-              <img src="/images/九大宵夜/modify/6.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-text"><B>泡麵</B></h2>
-                <p class="card-text">三分鐘即可上桌、懶人的救星。餓的時候來一碗熱麵，不用跑出門去買，真的超爽!</p>
+            <div class="swiper-slide">
+              <!--卡片滷肉飯-->
+              <div class="card" style="width: 18rem">
+                <img
+                  src="/images/九大宵夜/modify/6.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h2 class="card-text"><b>泡麵</b></h2>
+                  <p class="card-text">
+                    三分鐘即可上桌、懶人的救星。餓的時候來一碗熱麵，不用跑出門去買，真的超爽!
+                  </p>
+                </div>
               </div>
             </div>
+            <div class="swiper-slide fs-2">吃這些你怕變胖?!</div>
+            <div class="swiper-slide fs-3">那你還是趕緊洗洗睡吧!</div>
           </div>
-          <div class="swiper-slide fs-2">
-            吃這些你怕變胖?!
-          </div>
-          <div class="swiper-slide fs-3">
-            那你還是趕緊洗洗睡吧!
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid myBox">
-      <div class="wheel-container">
-        <div class="spinBtn">spin</div>
-        <div class="wheel">
-          <div class="number" style="--i:1;--clr:#db7093"><span>鹹酥雞</span></div>
-          <div class="number" style="--i:2;--clr:#E6E18F"><span>永和</span></div>
-          <div class="number" style="--i:3;--clr:#FFFAE2"><span>滷味</span></div>
-          <div class="number" style="--i:4;--clr:#8CFFDA"><span>魯肉飯</span></div>
-          <div class="number" style="--i:5;--clr:#75485E"><span>泡麵</span></div>
-          <div class="number" style="--i:6;--clr:#EF767A"><span>燒烤</span></div>
-          <!-- <div class="number" style="--i:7;--clr:#456990"><span>2</span></div>
-              <div class="number" style="--i:8;--clr:#EEB868"><span>1000</span></div> -->
         </div>
       </div>
+      <h1 class="text-primary"><b>還是有選擇障礙?那交給命運吧!</b></h1>
+      <!-- 轉盤 -->
+      <div class="container-fluid myBox" id="luckyDrew">
+        <div class="wheel-container">
+          <div class="spinBtn">spin</div>
+          <div class="wheel">
+            <div class="number" style="--i: 1; --clr: #db7093">
+              <span>鹹酥雞</span>
+            </div>
+            <div class="number" style="--i: 2; --clr: #e6e18f">
+              <span>永和</span>
+            </div>
+            <div class="number" style="--i: 3; --clr: #fffae2">
+              <span>滷味</span>
+            </div>
+            <div class="number" style="--i: 4; --clr: #8cffda">
+              <span>魯肉飯</span>
+            </div>
+            <div class="number" style="--i: 5; --clr: #75485e">
+              <span>泡麵</span>
+            </div>
+            <div class="number" style="--i: 6; --clr: #ef767a">
+              <span>燒烤</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="myForm">
+        <!--表單-->
+        <div class="mb-3"></div>
+        <div
+          id="reg"
+          class="row row-cols-1 row-cols-sm-1 row-cols-md-2 text-center mt-3s"
+        >
+          <div class="col d-flex justify-content-center align-items-center">
+            <div>
+              <h1><b>意見回饋</b></h1>
+              <h4>請填寫資料，我們樂意為您服務</h4>
+              <br />
+            </div>
+          </div>
+          <div class="col">
+            <form action="#" method="post">
+              <div class="row mb-3">
+                <div class="col-7">
+                  <input
+                    type="text"
+                    id="usr_name"
+                    placeholder="姓名"
+                    class="form-control"
+                  />
+                </div>
+                <div
+                  class="col-3 d-flex justify-content-center align-items-center"
+                >
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="usr_gender"
+                      id="usr_male"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="usr_male">先生</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="usr_gender"
+                      id="usr_female"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="usr_female"
+                      >小姐</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mb-3">
+                <div class="col">
+                  <input
+                    type="email"
+                    id="usr_email"
+                    placeholder="電子信箱"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="text"
+                    id="usr_phone"
+                    placeholder="聯絡電話"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <textarea
+                    id="usr_note"
+                    rows="3"
+                    placeholder="備註"
+                    class="form-control"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-2">
+                  <button type="button" class="btn btn-primary formCheckBtn">
+                    提交
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="row d-flex justify-content-center align-items-center">
+        <div>
+          <p class="text-center">
+            Copyright &copy; 2024 Taipower 504415 All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
-  </div>
 
+    <!--套件-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--swiper-->
+    <script src="lib/bootstrap5.3.3/js/bootstrap.bundle.min.js"></script>
+    <!--bootstrap-->
+    <script src="lib/sweetAlert2v11.10.8/js/sweetalert2@11.js"></script>
+    <!--sweetalert2-->
 
-  <!--套件-->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!--swiper-->
-  <script src="lib/bootstrap5.3.3/js/bootstrap.bundle.min.js"></script>
-  <!--bootstrap-->
-  <script src="lib/sweetAlert2v11.10.8/js/sweetalert2@11.js"></script>
-  <!--sweetalert2-->
-
-  <script src="js/swiperPages.js"></script>
-  <script src="js/luckWheel.js"></script>
-  <script>
-    // 初始化 WOW.js
-    new WOW().init();
+    <script src="js/swiperPages.js"></script>
+    <script src="js/luckWheel.js"></script>
+    <script>
+      // 初始化 WOW.js
+      new WOW().init();
+    </script>
+    <script>
+      let formCheckBtn = document.querySelector(".formCheckBtn");
+      formCheckBtn.addEventListener(
+        "click",
+        function () {
+          Swal.fire({
+            title: "感謝您的意見",
+            text: "表單已成功提交!",
+            icon: "success",
+          });
+        },
+        false
+      );
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              title: '肚子餓了嗎?',
+              text: '歡迎來到宵夜網',
+          });
+      });
   </script>
-</body>
-
+  </body>
 </html>

@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #333;
+    /* background-color: #3333334d; */
 
 }  
 
@@ -86,4 +86,21 @@
     position: absolute;
     font-size: 0.75rem;
     font-weight: 500;
+}
+
+/*rwd的部分*/
+@media (max-width: 600px) {
+    .wheel-container {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .wheel-container .spinBtn {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .wheel-container .wheel .number span {
+        font-size: 1.5em;
+    }
 }
